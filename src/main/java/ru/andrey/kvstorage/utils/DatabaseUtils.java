@@ -8,7 +8,7 @@ public final class DatabaseUtils {
 
     public static Database getDatabase(final ExecutionEnvironment env, final String databaseName) throws DatabaseException {
         return env.getDatabase(databaseName).orElseThrow(() ->
-            new DatabaseException(String.format("Database with name '%s' is already exists", databaseName))
+            new DatabaseException(String.format("Database with the name '%s' is not exist", databaseName))
         );
     }
 }

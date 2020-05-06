@@ -18,8 +18,8 @@ public class CreateDatabaseCommand implements DatabaseCommand {
     public String execute() throws DatabaseException {
         final Optional<Database> database = env.getDatabase(databaseName);
 
-        if (database.isEmpty()) {
-            throw new DatabaseException(String.format("Database with name '%s' is already exists", databaseName));
+        if (database.isPresent()) {
+            throw new DatabaseException(String.format("Database with the name '%s' is already exist", databaseName));
         }
 
         // TODO: add database to environment
@@ -29,7 +29,7 @@ public class CreateDatabaseCommand implements DatabaseCommand {
 
     public static DatabaseCommand fromArgs(final ExecutionEnvironment env, final String... args) {
         if (args.length != 1) {
-            throw new IllegalArgumentException("Invalid database name. Usage: CREATE_DATABASE <db_name>");
+            throw new IllegalArgumentException("Invalid command usage. Usage: CREATE_DATABASE <db_name>");
         }
 
         return new CreateDatabaseCommand(env, args[0]);

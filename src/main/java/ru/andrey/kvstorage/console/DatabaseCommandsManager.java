@@ -41,7 +41,7 @@ public class DatabaseCommandsManager {
         final String commandNameLower = commandName.toLowerCase();
 
         if (commandBuilders.containsKey(commandNameLower)) {
-            throw new IllegalArgumentException(String.format("Command with name '%s' is already exists", commandName));
+            throw new IllegalArgumentException(String.format("Command with the name '%s' is already exists", commandName));
         }
 
         commandBuilders.put(commandNameLower, builder);

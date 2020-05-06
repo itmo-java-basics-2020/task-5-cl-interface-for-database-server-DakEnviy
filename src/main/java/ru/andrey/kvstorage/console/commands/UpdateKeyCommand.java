@@ -27,7 +27,7 @@ public class UpdateKeyCommand implements DatabaseCommand {
 
     public static DatabaseCommand fromArgs(final ExecutionEnvironment env, final String... args) {
         if (args.length != 4) {
-            throw new IllegalArgumentException("Invalid database name. Usage: READ_KEY <db_name> <table_name> <key> <value>");
+            throw new IllegalArgumentException("Invalid command usage. Usage: UPDATE_KEY <db_name> <table_name> <key> <value>");
         }
 
         return new UpdateKeyCommand(env, args[0], args[1], args[2], args[3]);

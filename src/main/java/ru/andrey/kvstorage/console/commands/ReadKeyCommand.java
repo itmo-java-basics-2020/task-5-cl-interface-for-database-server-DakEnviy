@@ -24,7 +24,7 @@ public class ReadKeyCommand implements DatabaseCommand {
 
     public static DatabaseCommand fromArgs(final ExecutionEnvironment env, final String... args) {
         if (args.length != 3) {
-            throw new IllegalArgumentException("Invalid database name. Usage: READ_KEY <db_name> <table_name> <key>");
+            throw new IllegalArgumentException("Invalid command usage. Usage: READ_KEY <db_name> <table_name> <key>");
         }
 
         return new ReadKeyCommand(env, args[0], args[1], args[2]);

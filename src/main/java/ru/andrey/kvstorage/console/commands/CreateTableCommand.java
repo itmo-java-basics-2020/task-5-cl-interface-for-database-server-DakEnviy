@@ -25,7 +25,7 @@ public class CreateTableCommand implements DatabaseCommand {
 
     public static DatabaseCommand fromArgs(final ExecutionEnvironment env, final String... args) {
         if (args.length != 2) {
-            throw new IllegalArgumentException("Invalid database name. Usage: CREATE_TABLE <db_name> <table_name>");
+            throw new IllegalArgumentException("Invalid command usage. Usage: CREATE_TABLE <db_name> <table_name>");
         }
 
         return new CreateTableCommand(env, args[0], args[1]);

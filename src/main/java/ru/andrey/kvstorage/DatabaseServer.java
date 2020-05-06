@@ -1,5 +1,6 @@
 package ru.andrey.kvstorage;
 
+import org.apache.commons.lang3.StringUtils;
 import ru.andrey.kvstorage.console.DatabaseCommandResult;
 import ru.andrey.kvstorage.console.DatabaseCommandsManager;
 import ru.andrey.kvstorage.console.ExecutionEnvironment;
@@ -20,7 +21,7 @@ public class DatabaseServer {
     }
 
     DatabaseCommandResult executeNextCommand(final String commandText) {
-        if (commandText == null || commandText.isEmpty() || commandText.isBlank()) {
+        if (StringUtils.isBlank(commandText)) {
             return DatabaseCommandResult.error("Invalid command");
         }
 
