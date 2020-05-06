@@ -107,6 +107,7 @@ public class CommandsTest {
                 .dbName(DB_NAME)
                 .tableName("table")
                 .key(KEY_NAME)
+                .value(VALUE)
                 .build();
 
         DatabaseCommandResult result = server.executeNextCommand(command.toString());
@@ -159,7 +160,6 @@ public class CommandsTest {
                 .name("CREATE_TABLE")
                 .dbName(DB_NAME)
                 .tableName(TABLE_NAME)
-                .key(KEY_NAME)
                 .build();
 
         DatabaseCommandResult result = server.executeNextCommand(command.toString());

@@ -3,6 +3,7 @@ package ru.andrey.kvstorage.logic;
 import ru.andrey.kvstorage.exception.DatabaseException;
 
 public interface Database {
+
     String getName();
 
     void createTableIfNotExists(String tableName) throws DatabaseException;
